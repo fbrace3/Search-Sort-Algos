@@ -6,17 +6,20 @@ This project explores algorithm efficiency, runtime analysis, and implementation
 
 Algorithms Included
 Sorting Algorithms
-Algorithm	Description	Time Complexity
-Bubble Sort	Simple comparison-based sorting algorithm	O(n²)
-Merge Sort (2-way)	Divide and conquer merge sort	O(n log n)
-Merge Sort (3-way)	Variation of merge sort using three partitions	O(n log n)
-Quick Sort (First Pivot)	Quick sort using first element as pivot	O(n log n) average
-Quick Sort (Middle Pivot)	Quick sort using middle element as pivot	O(n log n) average
-Searching Algorithms (coming soon)
-Algorithm	Description	Time Complexity
-Linear Search	Sequential search through the list	O(n)
-Binary Search	Efficient search on sorted lists	O(log n)
+
+    Bubble Sort	Simple comparison-based sorting algorithm	O(n²)
+    Merge Sort (2-way)	Divide and conquer merge sort	O(n log n)
+    Merge Sort (3-way)	Variation of merge sort using three partitions	O(n log n)
+    Quick Sort (First Pivot)	Quick sort using first element as pivot	O(n log n) average
+    Quick Sort (Middle Pivot)	Quick sort using middle element as pivot	O(n log n) average
+
+Searching Algorithms 
+
+    Linear Search	Sequential search through the list	O(n)
+    Binary Search	Efficient search on sorted lists	O(log n)
+
 Project Structure
+
 Search-Sort-Algos
 │
 ├── SortVariations.py      # Sorting algorithms + runtime comparison
