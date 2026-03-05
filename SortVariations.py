@@ -157,99 +157,108 @@ def quickSortMiddle(arr, pivot=0):
 
   return quickSortMiddle(left) + middle + quickSortMiddle(right)
 
-select = 0
-while select == 0:
-  nums = [random.randint(0, 100) for _ in range(0, 50)]
-  # nums1 = [random.randint(0, 100) for _ in range(0, 50)]
-  # nums2 = [random.randint(0, 100) for _ in range(0, 50)]
-  # nums3 = [random.randint(0, 100) for _ in range(0, 50)]
-  # nums4 = [random.randint(0, 100) for _ in range(0, 50)]
-  # nums = [i for i in range(100, -1, -1)]
-
-  nums1 = nums.copy()
-  nums2 = nums.copy()
-  nums3 = nums.copy()
-  nums4 = nums.copy()
-
-  print("Select which sorting algorithm to run: \n1: Bubble Sort \n2: Merge Sort by 2\n3: Merge Sort by 3\n4: Quick Sort 1st pivot\n5: Quick Sort middle pivot\n6: Compare sorting times for All")
-  run_Algorithm = int(input())
-  if run_Algorithm == 1:
-    print("Bubble Sort")
-    print(nums)
-    x = bubbleSort(nums)
-    print(f'{x[0]}, \n elapsed time: {x[1]} seconds')
-  elif run_Algorithm == 2:
-    print("Merge Sort 2 way")
-    print(nums)
-    x = mergeSort(nums, 2)
-    print(f'{x[0]}, \n elapsed time: {x[1]} seconds')
-  elif run_Algorithm == 3:
-    print("Merge Sort 3 way")
-    print(nums)
-    x = mergeSort(nums, 3)
-    print(f'{x[0]}, \n elapsed time: {x[1]} seconds')
-  elif run_Algorithm == 4:
-    print("Quick Sort first pivot")
-    print(nums)
-    x = quickSort(nums, 0)
-    print(f'{x[0]}, \n elapsed time: {x[1]} seconds')
-  elif run_Algorithm == 5:
-    print("Quick Sort middle pivot")
-    print(nums)
-    x = quickSort(nums, 1)
-    print(f'{x[0]}, \n elapsed time: {x[1]} seconds')
-  elif run_Algorithm == 6:
-    print(nums)
-
-    x = bubbleSort(nums)
-    x1 = mergeSort(nums1, 2)
-    x2 = mergeSort(nums2, 3)
-    y1 = quickSort(nums3, 0)
-    y2 = quickSort(nums4, 1)
-
-    assert x[0] == x1[0], "Lists are not Equal"
-    assert x[0] == x2[0], "Lists are not Equal"
-    assert x[0] == y1[0], "Lists are not Equal"
-    assert x[0] == y2[0], "Lists are not Equal"
-    print(nums)
-
-    # Build a list of (label, time, sorted_array)
-    results = [
-    (x[2],   x[1],  x[0]),
-    (x1[2],  x1[1], x1[0]),
-    (x2[2],  x2[1], x2[0]),
-    (y1[2],  y1[1], y1[0]),
-    (y2[2],  y2[1], y2[0]),
-]
-
-  # Sort by time (index 1)
-    results_sorted = sorted(results, key=lambda r: r[1])
-
-# Fastest is now first
-    fast_label, fast_time, _ = results_sorted[0]
-
-    print("\nSorting Algorithm Comparison")
-    print(f"Fastest: {fast_label} — {fast_time:.6f}s\n")
-
-    print("Algorithm       | Time (s)   | Δ from fastest (s)")
-    print("---------------------------------------------------")
-    for label, t, _ in results_sorted:
-        delta = t - fast_time
-        print(f"{label:14} | {t:9.6f} | {delta:16.6f}")
-
-
-
-
-  else:
-    print("goodBye!")
-    exit()
-
-
-
-  print("Do you want to go again?")
-  replay = input()
-  if replay == 'y':
+def main():
     select = 0
-  else:
-    select = 1
-    print("Goodbye!")
+
+    while select == 0:
+
+        nums = [random.randint(0, 100) for _ in range(0, 50)]
+
+        nums1 = nums.copy()
+        nums2 = nums.copy()
+        nums3 = nums.copy()
+        nums4 = nums.copy()
+
+        print("Select which sorting algorithm to run:")
+        print("1: Bubble Sort")
+        print("2: Merge Sort by 2")
+        print("3: Merge Sort by 3")
+        print("4: Quick Sort 1st pivot")
+        print("5: Quick Sort middle pivot")
+        print("6: Compare sorting times for All")
+
+        run_Algorithm = int(input())
+
+        if run_Algorithm == 1:
+            print("Bubble Sort")
+            print(nums)
+            x = bubbleSort(nums)
+            print(f'{x[0]}, \n elapsed time: {x[1]} seconds')
+
+        elif run_Algorithm == 2:
+            print("Merge Sort 2 way")
+            print(nums)
+            x = mergeSort(nums, 2)
+            print(f'{x[0]}, \n elapsed time: {x[1]} seconds')
+
+        elif run_Algorithm == 3:
+            print("Merge Sort 3 way")
+            print(nums)
+            x = mergeSort(nums, 3)
+            print(f'{x[0]}, \n elapsed time: {x[1]} seconds')
+
+        elif run_Algorithm == 4:
+            print("Quick Sort first pivot")
+            print(nums)
+            x = quickSort(nums, 0)
+            print(f'{x[0]}, \n elapsed time: {x[1]} seconds')
+
+        elif run_Algorithm == 5:
+            print("Quick Sort middle pivot")
+            print(nums)
+            x = quickSort(nums, 1)
+            print(f'{x[0]}, \n elapsed time: {x[1]} seconds')
+
+        elif run_Algorithm == 6:
+
+            print(nums)
+
+            x = bubbleSort(nums)
+            x1 = mergeSort(nums1, 2)
+            x2 = mergeSort(nums2, 3)
+            y1 = quickSort(nums3, 0)
+            y2 = quickSort(nums4, 1)
+
+            assert x[0] == x1[0], "Lists are not Equal"
+            assert x[0] == x2[0], "Lists are not Equal"
+            assert x[0] == y1[0], "Lists are not Equal"
+            assert x[0] == y2[0], "Lists are not Equal"
+
+            results = [
+                (x[2], x[1], x[0]),
+                (x1[2], x1[1], x1[0]),
+                (x2[2], x2[1], x2[0]),
+                (y1[2], y1[1], y1[0]),
+                (y2[2], y2[1], y2[0]),
+            ]
+
+            results_sorted = sorted(results, key=lambda r: r[1])
+
+            fast_label, fast_time, _ = results_sorted[0]
+
+            print("\nSorting Algorithm Comparison")
+            print(f"Fastest: {fast_label} — {fast_time:.6f}s\n")
+
+            print("Algorithm       | Time (s)   | Δ from fastest (s)")
+            print("---------------------------------------------------")
+
+            for label, t, _ in results_sorted:
+                delta = t - fast_time
+                print(f"{label:14} | {t:9.6f} | {delta:16.6f}")
+
+        else:
+            print("Goodbye!")
+            exit()
+
+        print("Do you want to go again?")
+        replay = input()
+
+        if replay == 'y':
+            select = 0
+        else:
+            select = 1
+            print("Goodbye!")
+
+
+if __name__ == "__main__":
+    main()
