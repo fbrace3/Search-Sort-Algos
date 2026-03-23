@@ -4,6 +4,12 @@ A collection of classic searching and sorting algorithms implemented in Python w
 
 This project explores algorithm efficiency, runtime analysis, and implementation differences between multiple sorting strategies.
 
+**Update 3/14/2026**
+    I Will be adding additional algorithms as I work through them
+
+    Floyds added on 4/14/2026
+
+
 Algorithms Included
 Sorting Algorithms
 
